@@ -18,6 +18,17 @@ In each of the following material systems, the dislocation can lie and glide on 
 
 Please, each time you run a new type of simulation, create a new directory.
 
+## LAMMPS
+
+LAMMPS on [OSCER](http://www.ou.edu/oscer.html) likely does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).
+
+To finish this project, at least two packages are needed:
+
+- MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
+- VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
+
+Therefore, the first step in this project is to install both packages to your own version of LAMMPS.
+
 ## Nanolaminated Ag
 
 There are three different slip planes.
