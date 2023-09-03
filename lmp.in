@@ -44,6 +44,8 @@ run             150000
 unfix     1
 undump    1
 
+reset_timestep 0
+
 #store initial position of bottom and top planes along z. ####????
 variable tmp0 equal "zlo+10"
 variable zlo0 equal ${tmp0}
