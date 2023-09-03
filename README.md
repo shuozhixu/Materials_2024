@@ -35,22 +35,43 @@ There are three different slip planes.
 
 ### Plane 1
 
-Run the simulation with files `lmp.in`, `data.CLS_Ag_SITB_5nmy_1`, and `AgCu.eam.alloy`.
+Run the simulation with files `lmp.in`, `data.Ag_5nm_1`, and `AgCu.eam.alloy`.
 
-Once it is finished, you will find a file `shear.mobile.txt`. Plot a curve using the column 2 and column 8 as the _x_ and _y_ axes, respectively, and that is the stress-strain curve.
+Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the shear strain, which is unitless, while column 8 is the shear stress, in units of GPa. Plot a curve using the two columns as the _x_ and _y_ axes, respectively, and that is the stress-strain curve.
+
+From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.07956 GPa, taken at the strain of 0.003375.
+
+Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
 ### Other planes
 
-Repeat the simulation for the other two planes. Note that the data file should be changed to `data.CLS_Ag_SITB_5nmy_x`, where `x` is either `2` or `3`.
+Repeat the simulation for the other two planes. Note that the data file should be changed to `data.Ag_5nm_x`, where `x` is either `2` or `3`. Change the corresponding data file name in line 19 of `lmp.in`. Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs.
 
 Plot the three strain-stress curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
 
 ## Ag/Cu Nanolaminate - type 1
 
-There are ten different slip planes in Ag and Cu, respectively. Thus, in total, there are 20 different slip planes.
+The interface has a complex structure, making it difficult to determine how many different slip planes there are in each material (i.e., Ag or Cu). Therefore, we simply choose ten adjacent planes in each material and place a dislocation on each plane. Thus, in total, we study 20 different slip planes.
 
-Plot the 20 strain-stress curves in four figures. The first two figures are for when the dislocation is in Ag, and there should be five curves in each figure. The last two figures are for when the dislocatin is in Cu, and there should be five curves in each figure as well.
+### Plane 1 in Ag
+
+The simulation requires files `lmp.in`, `data.AgCu_type1_Ag_5nm_1`, and `AgCu.eam.alloy`. Make these changes in `lmp.in`:
+
+- Line 19, change the data file name to the correct one
+- Line 23, change `Ag Ag` to `Cu Ag`
+
+In each case, determine (i) value of the critical stress and (ii) whether the dislocation climbs.
+
+### Other planes
+
+Follow the steps above and run simulations on the other nine planes in Ag. In each simulation, use the data file `data.AgCu_type1_Ag_5nm_x`, where `x` varies from `2` to `10`. Remember to make the two changes in `lmp.in`. 
+
+Once all simulations are done, plot the ten strain-stress curves in two figures. The first figure is for planes 1 to 5, while the second for planes 6 to 10.
+
+### Planes in Cu
+
+Follow the steps above. Note that the data files are now `data.AgCu_type1_Cu_5nm_x`, where `x` varies from `1` to `10`.
 
 ## Ag/Cu Nanolaminate - type 2
 
-There are ten different slip planes in Ag and Cu, respectively. Thus, in total, there are 20 different slip planes.
+Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Cu_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`.
