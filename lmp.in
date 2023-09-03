@@ -34,11 +34,11 @@ thermo_style    custom step cpu etotal pe ke temp press pxx pyy pzz pxy pxz pyz 
 dump            1 all custom 50000 dump.*.npt id type x y z vx vy vz fx fy fz
 dump_modify     1 sort id
 
-velocity        all create ${initTemp} 99284591 rot yes dist gaussian
-velocity        all zero linear
-velocity        all zero angular
+#velocity        all create ${initTemp} 99284591 rot yes dist gaussian
+#velocity        all zero linear
+#velocity        all zero angular
 
-fix             1 all npt temp ${initTemp} ${initTemp} 0.1 aniso 0.0 0.0 1.0
+fix             1 all npt temp ${initTemp} ${initTemp} 0.1 x 0.0 0.0 1.0 y 0. 0. 1.
 run             150000
 
 unfix     1
