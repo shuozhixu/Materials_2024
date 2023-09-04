@@ -39,7 +39,7 @@ Run the simulation with files `lmp.in`, `data.Ag_5nm_1`, and `AgCu.eam.alloy`.
 
 Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the shear strain, which is unitless, while column 8 is the shear stress, in units of GPa. Plot a curve using the two columns as the _x_ and _y_ axes, respectively, and that is the stress-strain curve.
 
-From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.07956 GPa, taken at the strain of 0.003375.
+From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0691 GPa, taken at the strain of 0.00405.
 
 Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
