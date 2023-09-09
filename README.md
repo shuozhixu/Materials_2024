@@ -48,6 +48,14 @@ From the stress-strain curve, one can determine the critical stress for the disl
 
 Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
+Note: the simulation will generate a lot of dump files, whose total size can be large. Once the files occupy more than 20 GB in your \$HOME directory (see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU)), all jobs will be stopped. Therefore, consider moving files to your own directory on OURdisk, i.e.,
+
+	/ourdisk/hpc/cm3atou/dont_archive/mahshadfani
+	
+For convenience, you can add the following line to your sbatch file right after the `mpirun` line, i.e.,
+
+	mv dump.* /ourdisk/hpc/cm3atou/dont_archive/mahshadfani/${SLURM_JOB_ID}/
+
 ### Other planes
 
 Repeat the simulation for the other two planes. Note that the data file should be changed to `data.Ag_5nm_x`, where `x` is either `2` or `3`. Change the corresponding data file name in line 19 of `lmp.in`. Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs.
