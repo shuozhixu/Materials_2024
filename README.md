@@ -29,6 +29,11 @@ To finish this project, at least two packages are needed:
 
 Therefore, the first step in this project is to install both packages to your own version of LAMMPS.
 
+Note: if you use sbatch files from [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU), you may want to change the walltime (default: 12 hours) and/or number of cores (default: 16). For this project, I recommend
+
+	#SBATCH --time=300:00:00
+	#SBATCH --ntasks=32
+
 ## Nanolaminated Ag
 
 There are three different slip planes.
