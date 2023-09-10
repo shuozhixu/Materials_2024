@@ -39,7 +39,7 @@ Run the simulation with files `lmp.in`, `data.Ag_5nm_1`, `AgCu.eam.alloy`, and `
 
 Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the shear strain, which is unitless, while column 8 is the shear stress, in units of GPa. Plot a curve using the two columns as the _x_ and _y_ axes, respectively, and that is the stress-strain curve.
 
-From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0691 GPa, taken at the strain of 0.00405.
+From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0796 GPa, taken at the strain of 0.003375.
 
 All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_1`. The reason why dump files are in another place is because they are too large for \$HOME, see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU).
 
