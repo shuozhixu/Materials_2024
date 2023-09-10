@@ -32,23 +32,23 @@ shell mkdir ${output_direc}
 # -------------------------RELAXATION SETTINGS ---------------------------------
 timestep 0.001
 
-thermo          100
-thermo_style    custom step cpu etotal pe ke temp press pxx pyy pzz pxy pxz pyz vol density
+#thermo          100
+#thermo_style    custom step cpu etotal pe ke temp press pxx pyy pzz pxy pxz pyz vol density
 
-dump            1 all custom 50000 dump.*.npt id type x y z vx vy vz fx fy fz
-dump_modify     1 sort id
+#dump            1 all custom 50000 dump.*.npt id type x y z vx vy vz fx fy fz
+#dump_modify     1 sort id
 
 #velocity        all create ${initTemp} 99284591 rot yes dist gaussian
 #velocity        all zero linear
 #velocity        all zero angular
 
-fix             1 all npt temp ${initTemp} ${initTemp} 0.1 x 0.0 0.0 1.0 y 0. 0. 1.
-run             150000
+#fix             1 all npt temp ${initTemp} ${initTemp} 0.1 x 0.0 0.0 1.0 y 0. 0. 1.
+#run             150000
 
-unfix     1
-undump    1
+#unfix     1
+#undump    1
 
-reset_timestep 0
+#reset_timestep 0
 
 #store initial position of bottom and top planes along z. ####????
 variable tmp0 equal "zlo+10"

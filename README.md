@@ -16,16 +16,20 @@ Note: All files for calculations can be found in this GitHub repository, except 
 
 There are three different nanolaminates in this project. In each nanolaminate, the dislocation can lie and glide on one of many slip planes. In total, you will run 43 LAMMPS simulations. Please, each time you run a new type of simulation, create a new directory.
 
-[](## LAMMPS)
+## LAMMPS
 
-[](LAMMPS on OSCER likely does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).)
+LAMMPS on OSCER does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).
 
-[](To finish this project, at least two packages are needed:)
+To finish this project, two packages are needed:
 
-[](- MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.)
-[](- VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).)
+- MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
+- VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
 
-[](Therefore, the first step in this project is to install both packages to your own version of LAMMPS. Once you did that, modify one line in `lmp.batch` to mpirun -np $SLURM_NPROCS /YOURPATH/lmp_mpi -in lmp.in, where `YOURPATH` is your own path to your newly compiled executable `lmp_mpi`.)
+Therefore, the first step in this project is to install both packages to your own version of LAMMPS. Once you did that, modify the mpirun line in `lmp.batch` to
+
+	mpirun -np $SLURM_NPROCS /YOURPATH/lmp_mpi -in lmp.in
+	
+where `YOURPATH` is your own path to your newly compiled executable `lmp_mpi`.
 
 ## Nanolaminated Ag
 
