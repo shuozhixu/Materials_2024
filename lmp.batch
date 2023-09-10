@@ -13,6 +13,10 @@
 ssh schooner.oscer.ou.edu
 # Defining the executable and scratch directory
 
+cd ${SLURM_SUBMIT_DIR}
+
+rm -f dump.* shear.*
+
 #module load intel/18
 module load LAMMPS/11Aug17-gompi-2017b
 #/bin/hostname

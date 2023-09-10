@@ -16,7 +16,7 @@ Note: All files for calculations can be found in this GitHub repository, except 
 
 In each of the following material systems, the dislocation can lie and glide on one of many slip planes.
 
-Please, each time you run a new type of simulation, create a new directory.
+In total, you will run 43 LAMMPS simulations. Please, each time you run a new type of simulation, create a new directory.
 
 ## LAMMPS
 
@@ -37,6 +37,8 @@ Note: Feel free to increase the walltime (default: 300 hours) and/or number of n
 
 ## Nanolaminated Ag
 
+The interfacial energy is 407.16 mJ/m<sup>2</sup>.
+
 There are three different slip planes.
 
 ### Plane 1
@@ -47,7 +49,7 @@ Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the sh
 
 From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0691 GPa, taken at the strain of 0.00405.
 
-All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshadfani/Ag_1`. Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
+All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_1`. Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
 ### Other planes
 
@@ -56,11 +58,13 @@ Repeat the simulation for the other two planes. Note that you should use the dat
 - Line 19, change the corresponding data file name.
 - Line 28, change the last number `1` to `2` or `3`.
 
-Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshadfani/Ag_x`, where `x` is `2` or `3`.
+Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_x`, where `x` is `2` or `3`.
 
 Plot the three strain-stress curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
 
 ## Ag/Cu Nanolaminate - type 1
+
+The interfacial energy is 580.79 mJ/m<sup>2</sup>.
 
 The interface has a complex structure, making it difficult to determine how many different slip planes there are in each material (i.e., Ag or Cu). Therefore, we simply choose ten adjacent planes in each material and place a dislocation on each plane. Thus, in total, we study 20 different slip planes.
 
@@ -85,5 +89,7 @@ Once all simulations are done, plot the ten strain-stress curves in two figures.
 Follow the steps above. Note that the data files are now `data.AgCu_type1_Cu_5nm_x`, where `x` varies from `1` to `10`.
 
 ## Ag/Cu Nanolaminate - type 2
+
+The type 2 interface is also known as the Ag/Cu cube interface. Its interfacial energy is 474.74 mJ/m<sup>2</sup>.
 
 Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Cu_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`.
