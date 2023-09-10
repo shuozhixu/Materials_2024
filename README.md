@@ -27,12 +27,13 @@ To finish this project, at least two packages are needed:
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
 
-Therefore, the first step in this project is to install both packages to your own version of LAMMPS.
+Therefore, the first step in this project is to install both packages to your own version of LAMMPS. Once you did that, modify one line in `lmp.batch` to
 
-Note: if you use sbatch files from [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU), you may want to change the walltime (default: 12 hours) and/or number of cores (default: 16). For this project, I recommend
+	mpirun -np $SLURM_NPROCS /YOURPATH/lmp_mpi -in lmp.in
 
-	#SBATCH --time=300:00:00
-	#SBATCH --ntasks=32
+where `YOURPATH` is your own path to your newly compiled executable `lmp_mpi`.
+
+Note: Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed.
 
 ## Nanolaminated Ag
 
@@ -40,25 +41,22 @@ There are three different slip planes.
 
 ### Plane 1
 
-Run the simulation with files `lmp.in`, `data.Ag_5nm_1`, and `AgCu.eam.alloy`.
+Run the simulation with files `lmp.in`, `data.Ag_5nm_1`, `AgCu.eam.alloy`, and `lmp.batch`.
 
 Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the shear strain, which is unitless, while column 8 is the shear stress, in units of GPa. Plot a curve using the two columns as the _x_ and _y_ axes, respectively, and that is the stress-strain curve.
 
 From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0691 GPa, taken at the strain of 0.00405.
 
-Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
-
-Note: the simulation will generate a lot of dump files, whose total size can be large. Once the files occupy more than 20 GB in your \$HOME directory (see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU)), all jobs will be stopped. Therefore, consider moving files to your own directory on OURdisk, i.e.,
-
-	/ourdisk/hpc/cm3atou/dont_archive/mahshadfani
-	
-For convenience, you can add the following line to your sbatch file right after the `mpirun` line, i.e.,
-
-	mv dump.* /ourdisk/hpc/cm3atou/dont_archive/mahshadfani/${SLURM_JOB_ID}/
+All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshadfani/Ag_1`. Check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
 ### Other planes
 
-Repeat the simulation for the other two planes. Note that the data file should be changed to `data.Ag_5nm_x`, where `x` is either `2` or `3`. Change the corresponding data file name in line 19 of `lmp.in`. Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs.
+Repeat the simulation for the other two planes. Note that you should use the data file `data.Ag_5nm_x`, where `x` is either `2` or `3`. In `lmp.in`, make two changes:
+
+- Line 19, change the corresponding data file name.
+- Line 28, change the last number `1` to `2` or `3`.
+
+Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshadfani/Ag_x`, where `x` is `2` or `3`.
 
 Plot the three strain-stress curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
 
@@ -68,16 +66,17 @@ The interface has a complex structure, making it difficult to determine how many
 
 ### Plane 1 in Ag
 
-The simulation requires files `lmp.in`, `data.AgCu_type1_Ag_5nm_1`, and `AgCu.eam.alloy`. Make these changes in `lmp.in`:
+The simulation requires files `lmp.in`, `data.AgCu_type1_Ag_5nm_1`, `AgCu.eam.alloy`, `lmp.batch`. Make these changes in `lmp.in`:
 
 - Line 19, change the data file name to the correct one
 - Line 23, change `Ag Ag` to `Cu Ag`
+- Line 28, change the last directory name `AgCu_type1_Ag_1`. In fact, you can set the directory name as anything; just need to distinguish it from other directories.
 
 In each case, determine (i) value of the critical stress and (ii) whether the dislocation climbs.
 
 ### Other planes
 
-Follow the steps above and run simulations on the other nine planes in Ag. In each simulation, use the data file `data.AgCu_type1_Ag_5nm_x`, where `x` varies from `2` to `10`. Remember to make the two changes in `lmp.in`. 
+Follow the steps above and run simulations on the other nine planes in Ag. In each simulation, use the data file `data.AgCu_type1_Ag_5nm_x`, where `x` varies from `2` to `10`. Remember to make the three changes in `lmp.in`. 
 
 Once all simulations are done, plot the ten strain-stress curves in two figures. The first figure is for planes 1 to 5, while the second for planes 6 to 10.
 

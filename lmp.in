@@ -25,6 +25,10 @@ pair_coeff  * * AgCu.eam.alloy Ag Ag
 neighbor        2.5  bin
 neigh_modify    delay 10 every 2 check yes one 30000 page 300000
 
+variable output_direc string /ourdisk/hpc/cm3atou/dont_archive/mahshadfani/Ag_1
+
+shell mkdir ${output_direc}
+
 # -------------------------RELAXATION SETTINGS ---------------------------------
 timestep 0.001
 
@@ -251,6 +255,8 @@ fix def10 all print 7500 "${ttime} ${ctstrain} ${tstrain} ${layerstressc}" file 
 
 thermo 100
 thermo_style custom step cpu etotal pe ke temp c_temp1 c_temp2 c_temp3 c_temp4 c_temp5 press pxx pyy pzz pxy pxz pyz
+
+shell cd ${output_direc}
 
 #####?????
 dump    1 all custom 7500 dump.* id type x y z vx vy vz fx fy fz c_pe c_ke v_Sxx v_Syy v_Szz v_Sxy v_Sxz v_Syz
