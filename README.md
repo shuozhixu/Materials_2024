@@ -16,6 +16,8 @@ Note: All files for calculations can be found in this GitHub repository, except 
 
 There are three different nanolaminates in this project. In each nanolaminate, the dislocation can lie and glide on one of many slip planes. In total, you will run 43 LAMMPS simulations. Please, each time you run a new type of simulation, create a new directory.
 
+You may run up to 8 jobs at the same time. Each job may take one week to finish, so I expect all simulations to be finished within 6 weeks.
+
 ## LAMMPS
 
 LAMMPS on OSCER does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).
