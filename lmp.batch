@@ -11,7 +11,7 @@
 #SBATCH --mail-type=ALL
 #
 #################################################
-ssh schooner.oscer.ou.edu
+
 # Defining the executable and scratch directory
 
 cd ${SLURM_SUBMIT_DIR}
