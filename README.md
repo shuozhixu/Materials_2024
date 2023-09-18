@@ -19,7 +19,7 @@ Read the following journal articles to understand how the CLS process can be cal
 - Wu-Rong Jian, Shuozhi Xu, Yanqing Su, Irene J. Beyerlein, [Role of layer thickness and dislocation distribution in confined layer slip in nanolaminated Nb](http://dx.doi.org/10.1016/j.ijplas.2022.103239), Int. J. Plast. 152 (2022) 103239
 - Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815
 
-None of the papers above are in the Cu/Ag system. [Here](https://drive.google.com/drive/folders/10ONTPaz5GWNJaJW-JFp2eQ26b_omDWcM?usp=sharing) are some prior work on Cu/Ag nanolaminates.
+Most papers above are not in the Cu/Ag system. [Here](https://drive.google.com/drive/folders/10ONTPaz5GWNJaJW-JFp2eQ26b_omDWcM?usp=sharing) are some prior work on Cu/Ag nanolaminates.
 
 ## LAMMPS
 
