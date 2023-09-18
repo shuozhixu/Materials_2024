@@ -25,16 +25,10 @@ None of the papers above are in the Cu/Ag system. [Here](https://drive.google.co
 
 LAMMPS on OSCER does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).
 
-To finish this project, two packages are needed:
+To finish this project, you need to build your own LAMMPS version with the following two packages included:
 
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
-
-Therefore, the first step in this project is to install both packages to your own version of LAMMPS. Once you did that, modify the mpirun line in `lmp.batch` to
-
-	mpirun -np $SLURM_NPROCS /YOURPATH/lmp_mpi -in lmp.in
-	
-where `YOURPATH` is your own path to your newly compiled executable `lmp_mpi`.
 
 Note: All files for calculations can be found in this GitHub repository, except the data files which can be [here](https://drive.google.com/drive/folders/1YZu87CYd2v4Lga5JAvvNwOLzXJRPqeJn?usp=sharing). The reason is that the data files are too large for GitHub. Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed. That would require the modification of `lmp.batch`.
 
