@@ -25,7 +25,7 @@ None of the papers above are in the Cu/Ag system. [Here](https://drive.google.co
 
 LAMMPS on OSCER does not come with many packages. To build more packages into LAMMPS, please visit [this page](https://docs.lammps.org/Build_package.html).
 
-To finish this project, you need to build your own LAMMPS version with the following two packages included:
+To finish this project, build your own LAMMPS version with the following two packages included:
 
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
