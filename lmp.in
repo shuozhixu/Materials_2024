@@ -25,7 +25,7 @@ pair_coeff  * * AgCu.eam.alloy Ag Ag
 neighbor        2.5  bin
 neigh_modify    delay 10 every 2 check yes one 30000 page 300000
 
-variable output_direc string /ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_1
+variable output_direc string /ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag_1
 
 shell mkdir ${output_direc}
 

@@ -50,7 +50,7 @@ Once it is finished, you will find a file `shear.mobile.txt`. Column 2 is the sh
 
 From the stress-strain curve, one can determine the critical stress for the dislocation to start moving. The critical stress is the first local maximum stress, excluding the first coupe of points. Specifically, the critical stress is 0.0796 GPa, taken at the strain of 0.003375.
 
-All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_1`. The reason why dump files are in another place is because they are too large for \$HOME, see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU).
+All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag_1`. The reason why dump files are in another place is because they are too large for \$HOME, see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU).
 
 Visualize the dump files in OVITO, check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
