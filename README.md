@@ -89,10 +89,12 @@ Once all simulations are done, plot the ten strain-stress curves in two figures.
 
 ### Planes in Cu
 
-Follow the steps above. Note that the data files are now `data.AgCu_type1_Cu_5nm_x`, where `x` varies from `1` to `10`.
+Follow the steps above. Note that the data files are now `data.AgCu_type1_Cu_5nm_x`, where `x` varies from `1` to `10`. In line 28 of the input file, change the last directory name to `AgCu_type1_Cu_x`, where `x` varies from `1` to `10`.
 
 ## Ag/Cu Nanolaminate - type 2
 
 The type 2 interface is also known as the Ag/Cu cube interface. Its interfacial energy is 474.74 mJ/m<sup>2</sup>.
 
-Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Ag_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`. Here, you will eventually obtain 20 stress-strain curves.
+Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Ag_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`. Also, in line 28 of the input file, change the last directory name to `AgCu_type2_Ag_x` or `AgCu_type2_Cu_x`, where `x` varies from `1` to `10`.
+
+Here, you will eventually obtain 20 stress-strain curves.
