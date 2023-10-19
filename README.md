@@ -103,23 +103,39 @@ Here, you will eventually obtain 20 stress-strain curves.
 
 There are two pure metals, Cu and Ag. We can simulate the dislocation glide in their single crystals, and compare results with those in nanolaminates.
 
-The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curve shown in Figure 2 (label: SC-Cu).
+The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curves shown in Figure 2 (labels: SC-Cu and FC-Cu). `SC` is when periodic boundary conditions are applied along the dislocation line; `FC` is when traction-free conditions are applied along the dislocation line.
 
-Here, we will simulate the dislocation dynamics in a Ag single crystal. Most files to be used can be found in the `SC-Ag` directory in this GitHub repository.
+Here, we will simulate the dislocation dynamics in a Ag single crystal.
 
-First, we use [Atomsk](https://atomsk.univ-lille.fr) to build a Ag single crystal containing an unrelaxed edge dislocation, i.e.,
+To build a Ag single crystal containing an unrelaxed edge dislocation, we use [Atomsk](https://atomsk.univ-lille.fr) to process the `atomsk_Ag.sh` file which can be found in the `SC-Ag` directory in this GitHub repository, i.e.,
 
 	sh atomsk_Ag.sh
 
 which will create a file `data.Ag`.
 
-Second, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+### Periodic boundary conditions
 
-Once the simulation is finished, you will find a file `data.minAg`.
+The two input files to be used can be found in the `SC-Ag` directory in this GitHub repository.
 
-Last, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_SCAg.in`, `data.minAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
+First, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+
+Once the simulation is finished, you will find a file `data.minSCAg`.
+
+Second, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_SCAg.in`, `data.minSCAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
 
 All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag-SC`. Record the stress-strain curve and plot it together with the three curves for the nanolaminated Ag.
+
+### Traction-free boundary conditions
+
+The two input files to be used can be found in the `FS-Ag` directory in this GitHub repository.
+
+First, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minFSAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+
+Once the simulation is finished, you will find a file `data.minFSAg`.
+
+Second, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_FSAg.in`, `data.minFSAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
+
+All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag-FS`. Record the stress-strain curve and plot it together with the three curves for the nanolaminated Ag.
 
 ## References
 

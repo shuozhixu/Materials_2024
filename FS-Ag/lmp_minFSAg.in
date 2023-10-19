@@ -9,7 +9,7 @@ variable initTemp equal 1.0
 # ------------------------ INITIALIZATION ----------------------------
 units metal         
 dimension 3          
-boundary p p s 
+boundary p s s 
 
 processors      * * 2         
 atom_style       atomic    
@@ -35,6 +35,6 @@ fix		1 all box/relax x 0.0 y 0.0 vmax 0.001
 min_style       cg
 minimize        1.0e-12 1.0e-12 10000 10000
 
-write_data      data.minSCAg
+write_data      data.minFSAg
 
 print           "All done"
