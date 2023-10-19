@@ -113,7 +113,7 @@ First, we use [Atomsk](https://atomsk.univ-lille.fr) to build a Ag single crysta
 
 which will create a file `data.Ag`.
 
-Second, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation, by running a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file.
+Second, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
 
 Once the simulation is finished, you will find a file `data.minAg`.
 
