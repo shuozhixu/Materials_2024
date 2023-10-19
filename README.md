@@ -32,11 +32,11 @@ To finish this project, build your own LAMMPS version with the following two pac
 
 Note: All files for calculations can be found in this GitHub repository, except the data files which can be [here](https://drive.google.com/drive/folders/1YZu87CYd2v4Lga5JAvvNwOLzXJRPqeJn?usp=sharing). The reason is that the data files are too large for GitHub. Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed. That would require the modification of `lmp.batch`.
 
-There are three different nanolaminates in this project. In each nanolaminate, the dislocation can lie and glide on one of many slip planes. In total, you will run 43 LAMMPS simulations. Please, each time you run a new type of simulation, create a new directory.
+Please, each time you run a new type of simulation, create a new directory.
 
-You may run up to 8 jobs at the same time. Each job may take one week to finish, so I expect all simulations to be finished within 6 weeks.
+The interatomic potential is from [this paper](http://dx.doi.org/10.1088/0965-0393/14/5/002).
 
-## Ag
+## Nanolaminated Ag
 
 The interfacial energy is 407.16 mJ/m<sup>2</sup>.
 
@@ -63,7 +63,7 @@ Repeat the simulation for the other two planes. Note that you should use the dat
 
 Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Again, note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_x`, where `x` is `2` or `3`.
 
-Plot the three strain-stress curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
+Plot the three stress-strain curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
 
 ## Ag/Cu Nanolaminate - type 1
 
@@ -85,7 +85,7 @@ In each case, determine (i) value of the critical stress and (ii) whether the di
 
 Follow the steps above and run simulations on the other nine planes in Ag. In each simulation, use the data file `data.AgCu_type1_Ag_5nm_x`, where `x` varies from `2` to `10`. Remember to make those three changes in `lmp.in`. 
 
-Once all simulations are done, plot the ten strain-stress curves in two figures. The first figure is for planes 1 to 5, while the second for planes 6 to 10.
+Once all simulations are done, plot the ten stress-strain curves in two figures. The first figure is for planes 1 to 5, while the second for planes 6 to 10.
 
 ### Planes in Cu
 
@@ -98,3 +98,31 @@ The type 2 interface is also known as the Ag/Cu cube interface. Its interfacial 
 Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Ag_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`. Also, in line 28 of the input file, change the last directory name to `AgCu_type2_Ag_x` or `AgCu_type2_Cu_x`, where `x` varies from `1` to `10`.
 
 Here, you will eventually obtain 20 stress-strain curves.
+
+## Single crystalline pure metals
+
+There are two pure metals, Cu and Ag. We can simulate the dislocation glide in their single crystals, and compare results with those in nanolaminates.
+
+The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curve shown in Figure 2 (label: SC-Cu).
+
+Here, we will simulate the dislocation dynamics in a Ag single crystal. Most files to be used can be found in the `SC-Ag` directory in this GitHub repository.
+
+First, we use [Atomsk](https://atomsk.univ-lille.fr) to build a Ag single crystal containing an unrelaxed edge dislocation, i.e.,
+
+	sh atomsk_Ag.sh
+
+which will create a file `data.Ag`.
+
+Second, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation, by running a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file.
+
+Once the simulation is finished, you will find a file `data.minAg`.
+
+Last, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_SCAg.in`, `data.minAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
+
+All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag-SC`. Record the stress-strain curve and plot it together with the three curves for the nanolaminated Ag.
+
+## References
+
+If you use any files from this GitHub repository, please cite
+
+- Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815

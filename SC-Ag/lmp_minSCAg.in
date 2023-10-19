@@ -1,0 +1,40 @@
+# An in.script for npt
+# package gpu force/neigh 0 2 1.0
+# General parameters
+
+variable	sname index relax
+log		${sname}.log  
+variable initTemp equal 1.0
+
+# ------------------------ INITIALIZATION ----------------------------
+units metal         
+dimension 3          
+boundary p p s 
+
+processors      * * 2         
+atom_style       atomic    
+read_data       data.Ag
+
+#mass 1 92.90638                        # Defines the mass of Nb
+#mass 2 92.90638                        # Defines the mass of Nb
+
+neighbor        2.5  bin
+neigh_modify    delay 100 every 2 check yes one 30000 page 300000
+
+# Potentials
+pair_style      eam/alloy 
+pair_coeff  * * AgCu.eam.alloy Ag
+
+thermo          1
+thermo_style    custom step pxx pyy pzz pxy pxz pyz
+
+dump            1 all custom 1000 dump.* id type x y z
+#dump_modify     1 sort id
+
+fix		1 all box/relax x 0.0 y 0.0 vmax 0.001
+min_style       cg
+minimize        1.0e-12 1.0e-12 10000 10000
+
+write_data      data.minAg
+
+print           "All done"
