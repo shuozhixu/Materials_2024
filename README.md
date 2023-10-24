@@ -141,6 +141,8 @@ Third, we calculate the \{112\} free surface energy in Ag. To this purpose, crea
 
 Once the simulation is finished, we will find a file `FSE`, which contains the free surface energy, in units of mJ/m<sup>2</sup>.
 
+Note: Density functional theory-based \{112\} free surface energies in Ag and Cu, are 868 mJ/m<sup>2</sup> and 1626 mJ/m<sup>2</sup>, respectively, according to [this paper](https://doi.org/10.1038/sdata.2016.80).
+
 ## References
 
 If you use any files from this GitHub repository, please cite
