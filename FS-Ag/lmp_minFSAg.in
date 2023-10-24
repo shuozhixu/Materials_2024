@@ -31,7 +31,7 @@ thermo_style    custom step pxx pyy pzz pxy pxz pyz
 dump            1 all custom 1000 dump.* id type x y z
 #dump_modify     1 sort id
 
-fix		1 all box/relax x 0.0 y 0.0 vmax 0.001
+fix		1 all box/relax x 0.0 vmax 0.001
 min_style       cg
 minimize        1.0e-12 1.0e-12 10000 10000
 
