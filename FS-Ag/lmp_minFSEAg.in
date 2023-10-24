@@ -1,0 +1,59 @@
+# An in.script for npt
+# package gpu force/neigh 0 2 1.0
+# General parameters
+
+variable	sname index minimization
+log		${sname}.log  
+
+# ------------------------ INITIALIZATION ----------------------------
+units metal         
+dimension 3          
+boundary p s p 
+
+#processors      * * 2         
+atom_style       atomic    
+#read_data        Ag_SITB_44nmx_5nmy_27nmz_9_5_0.lmp
+
+lattice		fcc 4.09 orient x 1 -1 0 orient y 1 1 -2 orient z 1 1 1
+region		box block 0 76 0 20 0 38
+create_box	1 box
+create_atoms	1 box
+
+mass 1 107.8682                        # Defines the mass of Ag
+#mass 2 107.8682
+
+neighbor        2.5  bin
+neigh_modify    delay 10 every 2 check yes one 30000 page 300000
+
+region          cal block INF INF 15 INF INF INF
+group		cal region cal
+
+variable	atomAg equal count(cal)
+
+variable	area equal lx*lz
+
+variable	orieAg equal -2.85
+
+# Potentials
+pair_style      eam/alloy 
+pair_coeff  * * AgCu.eam.alloy Ag
+
+# -------------------------RELAXATION SETTINGS ---------------------------------
+timestep 0.001
+
+compute		peratom all pe/atom
+compute		eatoms cal reduce sum c_peratom
+
+variable	gbe equal (c_eatoms-${atomAg}*${orieAg})/${area}*1.60218*10000
+
+thermo          1
+thermo_style    custom step pxx pyy pzz pxy pxz pyz c_eatoms
+
+dump            1 all custom 1000 dump.* id type x y z
+#dump_modify     1 sort id
+
+fix		1 all box/relax x 0. z 0. vmax 0.001
+min_style       cg
+minimize        1.0e-12 1.0e-12 10000 10000
+
+print		"${gbe}" append FSE
