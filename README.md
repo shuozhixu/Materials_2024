@@ -38,6 +38,8 @@ The interatomic potential is from [this paper](http://dx.doi.org/10.1088/0965-03
 
 ## Nanolaminated Ag
 
+Two grains are involved. Their crystallographic orientations are [1-10]-[11-2]-[111] and [1-10]-[112]-[-1-11], respectively, the same as the `Cu/Cu` case in Table 2 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
+
 The interfacial energy is 407.16 mJ/m<sup>2</sup>.
 
 There are three different slip planes.
@@ -67,6 +69,8 @@ Plot the three stress-strain curves in the same figure, similar to Figure 7 of [
 
 ## Ag/Cu Nanolaminate - type 1
 
+The crystallographic orientations are [1-10]-[11-2]-[111] and [1-10]-[112]-[-1-11], respectively, in Cu and Ag.
+
 The interfacial energy is 580.79 mJ/m<sup>2</sup>.
 
 The interface has a complex structure, making it difficult to determine how many different slip planes there are in each material (i.e., Ag or Cu). Therefore, we simply choose ten adjacent planes in each material and place a dislocation on each plane. Thus, in total, we study 20 different slip planes.
@@ -93,7 +97,7 @@ Follow the steps above. Note that the data files are now `data.AgCu_type1_Cu_5nm
 
 ## Ag/Cu Nanolaminate - type 2
 
-The type 2 interface is also known as the Ag/Cu cube interface. Its interfacial energy is 474.74 mJ/m<sup>2</sup>.
+The crystallographic orientations are the same for both Ag and Cu, i.e., [1-10]-[11-2]-[111]. This is the cube-on-cube orientation. Thus, the interface is also known as the Ag/Cu cube interface. Its interfacial energy is 474.74 mJ/m<sup>2</sup>.
 
 Follow the steps in the previous section `Ag/Cu Nanolaminate - type 1`. The data file here is either `data.AgCu_type2_Ag_5nm_x` or `data.AgCu_type2_Cu_5nm_x`, where `x` varies from `1` to `10`. Also, in line 28 of the input file, change the last directory name to `AgCu_type2_Ag_x` or `AgCu_type2_Cu_x`, where `x` varies from `1` to `10`.
 
