@@ -63,7 +63,7 @@ Repeat the simulation for the other two planes. Note that we should use the data
 - Line 19, change the corresponding data file name.
 - Line 28, change the last number `1` to `2` or `3`.
 
-Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Again, note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad/Ag_x`, where `x` is `2` or `3`.
+Determine their respective critical stresses for dislocation glide. Check if the dislocation climbs. Again, note that the dump files can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag_x`, where `x` is `2` or `3`.
 
 Plot the three stress-strain curves in the same figure, similar to Figure 7 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y).
 
