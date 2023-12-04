@@ -19,7 +19,17 @@ Read the following journal articles to understand how the CLS process can be cal
 - Wu-Rong Jian, Shuozhi Xu, Yanqing Su, Irene J. Beyerlein, [Role of layer thickness and dislocation distribution in confined layer slip in nanolaminated Nb](http://dx.doi.org/10.1016/j.ijplas.2022.103239), Int. J. Plast. 152 (2022) 103239
 - Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815
 
-Most papers above are not in the Cu/Ag system. [Here](https://drive.google.com/drive/folders/10ONTPaz5GWNJaJW-JFp2eQ26b_omDWcM?usp=sharing) are some prior work on Cu/Ag nanolaminates.
+Most papers above are not in the Cu/Ag system. The following are some prior work on Cu/Ag nanolaminates:
+
+- Experiments
+	- X.F. Kong, N. Gao, I.J. Beyerlein, B.N. Yao, S.J. Zheng, X.L. Ma, D. Legut, T.C. Germann, H.J. Zhang, R.F. Zhang, [Interface facilitated transformation of voids directly into stacking fault tetrahedra](https://doi.org/10.1016/j.actamat.2020.02.044), Acta Mater. 188 (2020) 623-634
+	- Min Wang, Irene J. Beyerlein, Jian Zhang, Wei-Zhong Han, [Bi-metal interface-mediated defects distribution in neon ion bombarded Cu/Ag nanocomposites](https://doi.org/10.1016/j.scriptamat.2019.06.016), Scr. Mater. 171 (2019) 1--5
+	- Min Wang, Irene J. Beyerlein, Jian Zhang, Wei-Zhong Han, [Defect-interface interactions in irradiated Cu/Ag nanocomposites](https://doi.org/10.1016/j.actamat.2018.09.003), Acta Mater. 160 (2018) 211--223
+	- Shijian Zheng, Shuai Shao, Jian Zhang, Yongqiang Wang, Michael J. Demkowicz, Irene J. Beyerlein, Nathan A. Mara, [Adhesion of voids to bimetal interfaces with non-uniform energies](http://dx.doi.org/10.1038/srep15428), Sci. Rep. 5 (2015) 15428
+- Modeling
+	- Yanxiang Liang, Aibo Luo, Lingwei Yang, Jianfeng Zhao, Luobing Wang, Qiang Wan, [Effect of interface structure and layer thickness on the mechanical properties and deformation behavior of Cu/Ag nanolaminates](https://doi.org/10.1016/j.physb.2023.414933), Phys. B Condens. Matter 661 (2023) 414933
+	- X.F. Kong, I.J. Beyerlein, Z.R. Liu, B.N. Yao, D. Legut, T.C. Germann, R.F. Zhang, [Stronger and more failure-resistant with three-dimensional serrated bimetal interfaces](https://doi.org/10.1016/j.actamat.2018.12.051), Acta Mater. 166 (2019) 231--245
+	- A. Kardani, A. Montazeri, [Temperature-based plastic deformation mechanism of Cu/Ag nanocomposites: A molecular dynamics study](https://doi.org/10.1016/j.commatsci.2017.12.041), Comput. Mater. Sci. 144 (2018) 223--231
 
 ## LAMMPS
 
@@ -30,7 +40,7 @@ To finish this project, build our own LAMMPS version with the following two pack
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
 
-Note: All files for calculations can be found in this GitHub repository, except the data files which can be [here](https://drive.google.com/drive/folders/1YZu87CYd2v4Lga5JAvvNwOLzXJRPqeJn?usp=sharing). The reason is that the data files are too large for GitHub. Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed. That would require the modification of `lmp.batch`.
+Note: All files for calculations can be found in this GitHub repository, except the data files which can be found [here](https://drive.google.com/drive/folders/1YZu87CYd2v4Lga5JAvvNwOLzXJRPqeJn?usp=sharing). The reason is that the data files are too large for GitHub. Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed. That would require the modification of `lmp.batch`.
 
 Each time we run a new type of simulation, create a new directory.
 
@@ -107,7 +117,7 @@ Here, we will eventually obtain 20 stress-strain curves.
 
 There are two pure metals, Cu and Ag. We can simulate the dislocation glide in their single crystals, and compare results with those in nanolaminates.
 
-The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curves shown in Figure 2 (labels: SC-Cu and FC-Cu). `SC` is when periodic boundary conditions are applied along the dislocation line; `FC` is when traction-free conditions are applied along the dislocation line. The same paper also calculated the \{112\} free surface energy in Cu, 1432 mJ/m<sup>2</sup>. 
+The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curves shown in Figure 2 (labels: SC-Cu and FC-Cu). `SC` is when periodic boundary conditions are applied along the dislocation line; `FC` is when traction-free boundary conditions are applied along the dislocation line. The same paper also calculated the \{112\} free surface energy in Cu, 1432 mJ/m<sup>2</sup>. 
 
 Here, we will simulate the dislocation dynamics in a Ag single crystal.
 
