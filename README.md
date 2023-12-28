@@ -64,7 +64,7 @@ From the stress-strain curve, one can determine the critical stress for the disl
 
 All dump files, which contain atomistic structures, can be found in the directory `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag_1`. The reason why dump files are in another place is because they are too large for \$HOME, see [LAMMPSatOU](https://github.com/ANSHURAJ11/LAMMPSatOU).
 
-Visualize the dump files in OVITO, check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
+Visualize the dump files in OVITO and check if the dislocation climbs, following Figures 3 & 6 of [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) and Figure 7 of [this paper](http://dx.doi.org/10.1007/s10853-023-08779-8).
 
 ### Other planes
 
@@ -99,7 +99,7 @@ In each case, determine (i) value of the critical stress and (ii) whether the di
 
 Follow the steps above and run simulations on the other nine planes in Ag. In each simulation, use the data file `data.AgCu_type1_Ag_5nm_x`, where `x` varies from `2` to `10`. Remember to make those three changes in `lmp.in`. 
 
-Once all simulations are done, plot the ten stress-strain curves in two figures. The first figure is for planes 1 to 5, while the second for planes 6 to 10.
+Once all simulations are done, plot the ten stress-strain curves in two figures. The first figure is for planes 1 to 5, while the second is for planes 6 to 10.
 
 ### Planes in Cu
 
@@ -119,9 +119,9 @@ There are two pure metals, Cu and Ag. We can simulate the dislocation glide in t
 
 The dislocation glide in a Cu single crystal has been modeled in [this paper](http://dx.doi.org/10.1557/s43578-021-00261-y) using the same [Cu potential](https://doi.org/10.1103/PhysRevB.63.224106) used here, with the stress-strain curves shown in Figure 2 (labels: SC-Cu and FC-Cu). `SC` is when periodic boundary conditions are applied along the dislocation line; `FC` is when traction-free boundary conditions are applied along the dislocation line. The same paper also calculated the \{112\} free surface energy in Cu, 1432 mJ/m<sup>2</sup>. 
 
-Here, we will simulate the dislocation dynamics in a Ag single crystal.
+Here, we will simulate the dislocation dynamics in an Ag single crystal.
 
-To build a Ag single crystal containing an unrelaxed edge dislocation, we use [Atomsk](https://atomsk.univ-lille.fr) to process the `atomsk_Ag.sh` file which can be found in the `SC-Ag` directory in this GitHub repository, i.e.,
+To build an Ag single crystal containing an unrelaxed edge dislocation, we use [Atomsk](https://atomsk.univ-lille.fr) to process the `atomsk_Ag.sh` file which can be found in the `SC-Ag` directory in this GitHub repository, i.e.,
 
 	sh atomsk_Ag.sh
 
@@ -131,11 +131,11 @@ which will create a file `data.Ag`.
 
 The two input files to be used can be found in the `SC-Ag` directory in this GitHub repository.
 
-First, we apply energy minimization to create a Ag single crystal containing a relaxed, infinitely long edge dislocation. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+First, we apply energy minimization to create an Ag single crystal containing a relaxed, infinitely long edge dislocation. To this purpose, create a new directory, and run a LAMMPS simulation using files `lmp_minSCAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine because there aren't many.
 
 Once the simulation is finished, we will find a file `data.minSCAg`.
 
-Second, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_SCAg.in`, `data.minSCAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
+Second, create a new directory and run a LAMMPS simulation to model the dislocation glide with files `lmp_SCAg.in`, `data.minSCAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
 
 All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag-SC`. Record the stress-strain curve and plot it together with the three curves for the nanolaminated Ag.
 
@@ -143,15 +143,15 @@ All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/A
 
 The two input files to be used can be found in the `FS-Ag` directory in this GitHub repository.
 
-First, we apply energy minimization to create a Ag single crystal containing a relaxed edge dislocation pinned between two \{112\} free surfaces. To this purpose, creata a new directory, and run a LAMMPS simulation using files `lmp_minFSAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+First, we apply energy minimization to create an Ag single crystal containing a relaxed edge dislocation pinned between two \{112\} free surfaces. To this purpose, create a new directory, and run a LAMMPS simulation using files `lmp_minFSAg.in`, `data.Ag`, `AgCu.eam.alloy`, and `lmp.batch`. Remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine because there aren't many.
 
 Once the simulation is finished, we will find a file `data.minFSAg`.
 
-Second, create a new directory, run a LAMMPS simulation to model the dislocation glide with files `lmp_FSAg.in`, `data.minFSAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
+Second, create a new directory and run a LAMMPS simulation to model the dislocation glide with files `lmp_FSAg.in`, `data.minFSAg`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file.
 
 All dumpe files can be found in `/ourdisk/hpc/cm3atou/dont_archive/mahshad1994/Ag-FS`. Record the stress-strain curve and plot it together with the three curves for the nanolaminated Ag.
 
-Third, we calculate the \{112\} free surface energy in Ag. To this purpose, create a new directory, and run a LAMMPS simulation using `lmp_minFSEAg.in`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine, because there aren't many.
+Third, we calculate the \{112\} free surface energy in Ag. To this purpose, create a new directory, and run a LAMMPS simulation using `lmp_minFSEAg.in`, `AgCu.eam.alloy`, and `lmp.batch`. Again, remember to modify the input file name in the last file. Dump files will be written to this directory, but that is fine because there aren't many.
 
 Once the simulation is finished, we will find a file `FSE`, which contains the free surface energy, in units of mJ/m<sup>2</sup>.
 
