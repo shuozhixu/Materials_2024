@@ -19,7 +19,7 @@ Read the following journal articles to understand how the CLS process can be cal
 - Wu-Rong Jian, Shuozhi Xu, Yanqing Su, Irene J. Beyerlein, [Role of layer thickness and dislocation distribution in confined layer slip in nanolaminated Nb](http://dx.doi.org/10.1016/j.ijplas.2022.103239), Int. J. Plast. 152 (2022) 103239
 - Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815
 
-Most papers above are not in the Cu/Ag system. The following are some prior work on Cu/Ag nanolaminates:
+None of the three papers above are in the Ag/Cu system. The following are some prior work on Ag/Cu nanolaminates, although none of them focused on CLS:
 
 - Experiments
 	- X.F. Kong, N. Gao, I.J. Beyerlein, B.N. Yao, S.J. Zheng, X.L. Ma, D. Legut, T.C. Germann, H.J. Zhang, R.F. Zhang, [Interface facilitated transformation of voids directly into stacking fault tetrahedra](https://doi.org/10.1016/j.actamat.2020.02.044), Acta Mater. 188 (2020) 623-634
@@ -161,4 +161,5 @@ Note: Density functional theory-based \{112\} free surface energies in Ag and Cu
 
 If you use any files from this GitHub repository, please cite
 
+- Mahshad Fani, Wu-Rong Jian, Yanqing Su, Shuozhi Xu, [Confined layer slip process in nanolaminated Ag and two Ag/Cu nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), Materials 1 (2024) 2
 - Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815
