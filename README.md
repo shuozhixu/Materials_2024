@@ -157,9 +157,8 @@ Once the simulation is finished, we will find a file `FSE`, which contains the f
 
 Note: Density functional theory-based \{112\} free surface energies in Ag and Cu, are 868 mJ/m<sup>2</sup> and 1626 mJ/m<sup>2</sup>, respectively, according to [this paper](https://doi.org/10.1038/sdata.2016.80).
 
-## References
+## Reference
 
 If you use any files from this GitHub repository, please cite
 
-- Mahshad Fani, Wu-Rong Jian, Yanqing Su, Shuozhi Xu, [Confined layer slip process in nanolaminated Ag and two Ag/Cu nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), Materials 1 (2024) 2
-- Wu-Rong Jian, Yanqing Su, Shuozhi Xu, Weisen Ji, Irene J. Beyerlein, [Effect of interface structure on dislocation glide behavior in nanolaminates](http://dx.doi.org/10.1557/s43578-021-00261-y), J. Mater. Res. 36 (2021) 2802--2815
+- Mahshad Fani, Wu-Rong Jian, Yanqing Su, Shuozhi Xu, [Confined layer slip process in nanolaminated Ag and two Ag/Cu nanolaminates](https://doi.org/10.3390/ma17020501), Materials 17 (2024) 501
