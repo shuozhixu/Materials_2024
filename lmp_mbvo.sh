@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 rm -rf lammps-mbvo
-module load intel/2023a
+module load intel/2022a
 mkdir lammps-mbvo
 cd lammps-mbvo
 git clone -b stable https://github.com/lammps/lammps.git mylammps
