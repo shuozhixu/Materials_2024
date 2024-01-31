@@ -22,13 +22,13 @@ rm -f dump.* shear.*
 #module load LAMMPS/11Aug17-gompi-2017b
 #/bin/hostname
 
-module load OpenMPI/4.1.4-GCC-11.3.0
+module load intel/2023a
 
 # execute lammps
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
-mpirun -np $SLURM_NPROCS lmp_mpi -in lmp.in
+mpirun -np $SLURM_NPROCS ~/lammps-mbvo/mylammps/src/lmp_mpi -in lmp.in
 
 echo "lammps out"
 

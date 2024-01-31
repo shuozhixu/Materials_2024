@@ -40,6 +40,14 @@ To finish this project, build our own LAMMPS version with the following two pack
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
 
+To build LAMMPS with these two packages, use the file `lmp_mbvo.sh` in the `lammps/` directory in this GitHub repository. First, cd to any directory on OSCER, e.g., \$HOME, then
+
+	sh lmp_mbvo.sh
+
+Note that the second command in `lmp_mbvo.sh` will load a module. If one cannot load it, try `module purge` first.
+
+Once the `sh` run is finished, we will find a file `lmp_mpi` in the `lammps-mbvo/mylammps/src/` directory on OSCER. And that is the LAMMPS executable with MANYBODY and VORONOI packages.
+
 Note: All files for calculations can be found in this GitHub repository, except the data files which can be found [here](https://drive.google.com/drive/folders/1YZu87CYd2v4Lga5JAvvNwOLzXJRPqeJn?usp=sharing). The reason is that the data files are too large for GitHub. Feel free to increase the walltime (default: 300 hours) and/or number of nodes (default: 1) and/or number of cores (default: 32), as needed. That would require the modification of `lmp.batch`.
 
 Each time we run a new type of simulation, create a new directory.
