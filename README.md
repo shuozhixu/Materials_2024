@@ -40,7 +40,7 @@ To finish this project, build our own LAMMPS version with the following two pack
 - MANYBODY package. This is to use the manybody potential such as the embedded-atom method potential.
 - VORONOI package. This is to calculate Voronoi tessellation of the atoms in the simulation cell. To learn more, please visit [this page](https://docs.lammps.org/compute_voronoi_atom.html).
 
-To build LAMMPS with these two packages, use the file `lmp_mbvo.sh` in the `lammps/` directory in this GitHub repository. First, cd to any directory on OSCER, e.g., \$HOME, then
+To build LAMMPS with these two packages, use the file `lmp_mbvo.sh`. First, cd to any directory on OSCER, e.g., \$HOME, then
 
 	sh lmp_mbvo.sh
 
