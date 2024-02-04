@@ -22,7 +22,7 @@ rm -f dump.* shear.*
 #module load LAMMPS/11Aug17-gompi-2017b
 #/bin/hostname
 
-module load intel/2023a
+module load intel/2022a
 
 # execute lammps
 echo "begin lammps"
