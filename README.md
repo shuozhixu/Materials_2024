@@ -22,7 +22,6 @@ Read the following journal articles to understand how the CLS process can be cal
 None of the three papers above are in the Ag/Cu system. The following are some prior work on Ag/Cu nanolaminates, although none of them focused on CLS:
 
 - Experiments
-	- X.F. Kong, N. Gao, I.J. Beyerlein, B.N. Yao, S.J. Zheng, X.L. Ma, D. Legut, T.C. Germann, H.J. Zhang, R.F. Zhang, [Interface facilitated transformation of voids directly into stacking fault tetrahedra](https://doi.org/10.1016/j.actamat.2020.02.044), Acta Mater. 188 (2020) 623-634
 	- Min Wang, Irene J. Beyerlein, Jian Zhang, Wei-Zhong Han, [Bi-metal interface-mediated defects distribution in neon ion bombarded Cu/Ag nanocomposites](https://doi.org/10.1016/j.scriptamat.2019.06.016), Scr. Mater. 171 (2019) 1--5
 	- Min Wang, Irene J. Beyerlein, Jian Zhang, Wei-Zhong Han, [Defect-interface interactions in irradiated Cu/Ag nanocomposites](https://doi.org/10.1016/j.actamat.2018.09.003), Acta Mater. 160 (2018) 211--223
 	- Shijian Zheng, Shuai Shao, Jian Zhang, Yongqiang Wang, Michael J. Demkowicz, Irene J. Beyerlein, Nathan A. Mara, [Adhesion of voids to bimetal interfaces with non-uniform energies](http://dx.doi.org/10.1038/srep15428), Sci. Rep. 5 (2015) 15428
