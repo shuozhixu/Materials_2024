@@ -28,6 +28,7 @@ None of the three papers above are in the Ag/Cu system. The following are some p
 	- Shijian Zheng, Shuai Shao, Jian Zhang, Yongqiang Wang, Michael J. Demkowicz, Irene J. Beyerlein, Nathan A. Mara, [Adhesion of voids to bimetal interfaces with non-uniform energies](http://dx.doi.org/10.1038/srep15428), Sci. Rep. 5 (2015) 15428
 - Modeling
 	- Yanxiang Liang, Aibo Luo, Lingwei Yang, Jianfeng Zhao, Luobing Wang, Qiang Wan, [Effect of interface structure and layer thickness on the mechanical properties and deformation behavior of Cu/Ag nanolaminates](https://doi.org/10.1016/j.physb.2023.414933), Phys. B Condens. Matter 661 (2023) 414933
+ 	- X.F. Kong, N. Gao, I.J. Beyerlein, B.N. Yao, S.J. Zheng, X.L. Ma, D. Legut, T.C. Germann, H.J. Zhang, R.F. Zhang, [Interface facilitated transformation of voids directly into stacking fault tetrahedra](https://doi.org/10.1016/j.actamat.2020.02.044), Acta Mater. 188 (2020) 623-634
 	- X.F. Kong, I.J. Beyerlein, Z.R. Liu, B.N. Yao, D. Legut, T.C. Germann, R.F. Zhang, [Stronger and more failure-resistant with three-dimensional serrated bimetal interfaces](https://doi.org/10.1016/j.actamat.2018.12.051), Acta Mater. 166 (2019) 231--245
 	- A. Kardani, A. Montazeri, [Temperature-based plastic deformation mechanism of Cu/Ag nanocomposites: A molecular dynamics study](https://doi.org/10.1016/j.commatsci.2017.12.041), Comput. Mater. Sci. 144 (2018) 223--231
 
