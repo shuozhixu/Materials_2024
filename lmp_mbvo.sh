@@ -1,9 +1,12 @@
 #!/usr/bin/bash
 
+mkdir -p software
+cd software
 rm -rf lammps-mbvo
-module load intel/2022a
 mkdir lammps-mbvo
 cd lammps-mbvo
+module load intel/2023b
+module load git/2.42.0-GCCcore-13.2.0
 git clone -b stable https://github.com/lammps/lammps.git mylammps
 cd mylammps/lib/voronoi
 wget --no-check-certificate https://math.lbl.gov/voro++/download/dir/voro++-0.4.6.tar.gz
